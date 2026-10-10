@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { images, rooms, propertyGallery, blogImages, propertyPhotoAlt, photoAlt, galleryPresentation } from '@/lib/guesthouse';
+import { images, rooms, propertyGallery, blogImages, propertyPhotoAlt, photoAlt, galleryPresentation, heroSlides } from '@/lib/guesthouse';
 
 describe('Guest-house photo and price update', () => {
+  it('keeps the existing welcome photo first and adds two accessible owner-photo slides', () => {
+    expect(heroSlides).toHaveLength(3);
+    expect(heroSlides[0]?.src).toBe(images.exterior);
+    expect(new Set(heroSlides.map(slide => slide.src)).size).toBe(3);
+    expect(heroSlides.every(slide => slide.src.includes('/__l5e/assets-v1/') && slide.alt.length > 15)).toBe(true);
+  });
   it('retains the existing room choices and keeps sample rates at or below the cap', () => {
     expect(rooms.map(room => room.name)).toEqual(['Standard Room', 'Deluxe Room', 'Family Room']);
     expect(rooms.every(room => room.price > 0 && room.price <= 250)).toBe(true);

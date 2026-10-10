@@ -1,4 +1,5 @@
 # Doss City website
+- [ ] Add the three-photo homepage carousel and verify automatic fades, arrows, dots, fixed text, and mobile framing.
 - [x] Correct gallery letterboxing with subject-aware framing, natural photo presentation, and checks at 360, 390, 430, tablet, and desktop widths.
 - [x] Fix portrait-photo overflow, consistent photo framing, and verify desktop/mobile presentation without altering content.
 - [x] Replace property placeholders with the owner's photos and faithful pub/conference variations; retain layout and blog inspiration imagery.

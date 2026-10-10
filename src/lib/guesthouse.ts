@@ -1,4 +1,6 @@
 import blogExterior from '@/assets/guesthouse.jpg';
+import heroPool from '@/assets/hero-pool.jpg.asset.json';
+import heroPoolGuests from '@/assets/hero-pool-guests.jpg.asset.json';
 import blogConference from '@/assets/conference.jpg';
 import exteriorAsset from '@/assets/property-building.jpg.asset.json';
 import roomAsset from '@/assets/property-room-grey.jpg.asset.json';
@@ -27,6 +29,11 @@ const restaurant = restaurantAsset.url;
 const conference = conferenceAsset.url;
 export const images = { exterior: exteriorAsset.url, room: roomAsset.url, restaurant, conference, countryside, food, pool: pool.url, pubDetail: pubDetail.url, conferenceDetail: conferenceDetail.url };
 export const blogImages = { exterior: blogExterior, conference: blogConference };
+export const heroSlides = [
+  { src: images.exterior, alt: 'Doss City Guest House building with a paved courtyard and blue canopy.' },
+  { src: heroPool.url, alt: 'Blue swimming pool between stone-clad guest-house buildings.' },
+  { src: heroPoolGuests.url, alt: 'Guests swimming and relaxing beside the guest-house pool.' },
+];
 export const propertyPhotoAlt: Record<string, string> = {
   [images.exterior]: 'Doss City Guest House building with a paved courtyard and blue canopy.',
   [courtyard.url]: 'Courtyard beside an orange building, with pool rules and a blue canopy.',
