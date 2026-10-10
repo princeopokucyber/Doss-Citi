@@ -57,7 +57,15 @@
 .page-hero { position:relative; height:330px; display:flex; align-items:center; color:var(--hero-foreground); } .page-hero::after { content:''; position:absolute; inset:0; background:var(--hero-overlay); } .page-hero h1 { font-size:60px; } .page-hero .container-site { position:relative; z-index:1; }
 .footer { background:var(--primary); color:var(--primary-foreground); padding-top:60px; } .footer p,.footer a { font-size:12px; line-height:1.9; } .footer a:hover { color:var(--accent); } .footer-title { font-family:var(--font-body); font-size:12px; font-weight:600; margin-bottom:20px; } .footer-muted { color:var(--hero-muted); }
  .form-control { color:var(--foreground); width:100%; border:1px solid var(--input); border-radius:var(--radius); background:var(--card); padding:12px 14px; font-size:13px; outline:none; } .form-control:focus { border-color:var(--accent); } .form-label { display:block; font-size:12px; margin-bottom:8px; font-weight:500; }
- .gallery-frame { aspect-ratio:4/3; background:var(--muted); display:block; } .gallery-image { display:block; width:100%; height:100%; object-fit:contain; object-position:center; filter:brightness(1.03) contrast(1.02); }
+ .gallery-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:28px 24px; }
+ .gallery-frame { position:relative; display:block; background:var(--muted); border:1px solid var(--border); border-radius:var(--radius); }
+ .gallery-frame--landscape { aspect-ratio:1280/592; }
+ .gallery-frame--portrait { aspect-ratio:3/4; }
+ .gallery-image { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:center; filter:brightness(1.04) contrast(1.02) saturate(1.02); transition:filter .2s; }
+ .gallery-image--lower { object-position:center 65%; }
+ .gallery-frame:hover .gallery-image { filter:brightness(1.06) contrast(1.02) saturate(1.02); }
+ @media(min-width:640px) { .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+ @media(min-width:1024px) { .gallery-grid--portrait { grid-template-columns:repeat(3,minmax(0,1fr)); } }
  .photo-dialog { width:calc(100% - 32px); max-width:896px; max-height:calc(100dvh - 32px); padding:20px; overflow:hidden; grid-template-rows:auto minmax(0,1fr); }
  .lightbox-photo { display:block; width:100%; height:auto; max-height:calc(100dvh - 120px); min-height:0; object-fit:contain; object-position:center; filter:brightness(1.03) contrast(1.02); }
 @keyframes reveal { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } } .hero-content { animation:reveal .8s ease-out; }

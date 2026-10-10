@@ -72,6 +72,15 @@ export const propertyGallery: string[][] = [
  ['Conference seating',conferenceDetail.url,'Conference'],
  ['Conference-room details',conferenceCloseup.url,'Conference'],
 ];
+// Wide frames retain the entire exterior; portrait frames avoid aggressive room crops.
+const landscapePhotos = new Set([images.exterior, courtyard.url, restaurant, pubDetail.url, pubCloseup.url, food, conference, conferenceDetail.url, conferenceCloseup.url]);
+const lowerSubjects = new Set([images.room, patternedRoom.url, redRoom.url, stripedRoom.url, pool.url, poolside.url, poolSocial.url]);
+export function galleryPresentation(src: string) {
+  return {
+    orientation: landscapePhotos.has(src) ? 'landscape' as const : 'portrait' as const,
+    position: lowerSubjects.has(src) ? 'lower' as const : 'center' as const,
+  };
+}
 export const amenities = [
  { icon: Wifi, title: 'Free Wi-Fi', text: 'Stay connected throughout your stay.' },
  { icon: CarFront, title: 'Free parking', text: 'A convenient place to park, at no extra cost.' },
