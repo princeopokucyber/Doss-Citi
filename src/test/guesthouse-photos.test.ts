@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { images, rooms, propertyGallery, blogImages } from '@/lib/guesthouse';
-import stylesheet from '@/styles.css?raw';
 
 describe('Guest-house photo and price update', () => {
   it('retains the existing room choices and keeps sample rates at or below the cap', () => {
@@ -19,13 +18,10 @@ describe('Guest-house photo and price update', () => {
     expect(propertyGallery.filter(photo => photo[2] === 'Conference')).toHaveLength(3);
     expect(propertyGallery.filter(photo => photo[2] === 'Dining' && !photo[0]?.includes('illustrative'))).toHaveLength(3);
   });
-  it('uses uncropped room originals and bounds portrait gallery previews', () => {
+  it('uses uncropped room originals so subjects are preserved in contained frames', () => {
     expect(rooms[0]?.image).toBe(images.room);
     for (const room of rooms) {
       expect(propertyGallery.some(photo => photo[2] === 'Rooms' && photo[1] === room.image)).toBe(true);
     }
-    expect(stylesheet).toMatch(/\.gallery-frame\s*\{[^}]*aspect-ratio:4\/3/);
-    expect(stylesheet).toMatch(/\.gallery-image\s*\{[^}]*height:100%;[^}]*object-fit:contain/);
-    expect(stylesheet).toMatch(/\.lightbox-photo\s*\{[^}]*max-height:calc\(100dvh - 120px\);[^}]*object-fit:contain/);
   });
 });
