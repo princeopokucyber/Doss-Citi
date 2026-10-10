@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { images, rooms, propertyGallery, blogImages, propertyPhotoAlt, photoAlt } from '@/lib/guesthouse';
+import { images, rooms, propertyGallery, blogImages, propertyPhotoAlt, photoAlt, galleryPresentation } from '@/lib/guesthouse';
 
 describe('Guest-house photo and price update', () => {
   it('retains the existing room choices and keeps sample rates at or below the cap', () => {
@@ -22,6 +22,16 @@ describe('Guest-house photo and price update', () => {
     expect(propertyGallery.find(photo => photo[0] === 'Guest-room corridor')?.[2]).toBe('Rooms');
     expect(images.restaurant).toContain('/__l5e/assets-v1/');
     expect(images.conference).toContain('/__l5e/assets-v1/');
+  });
+  it('preserves wide exteriors and uses subject-aware portrait room previews', () => {
+    for (const photo of propertyGallery.filter(photo => photo[2] === 'Exterior')) {
+      expect(galleryPresentation(photo[1] ?? '').orientation).toBe('landscape');
+      expect(galleryPresentation(photo[1] ?? '').position).toBe('center');
+    }
+    expect(galleryPresentation(images.room)).toEqual({ orientation: 'portrait', position: 'lower' });
+    for (const photo of propertyGallery.filter(photo => photo[2] === 'Conference')) {
+      expect(galleryPresentation(photo[1] ?? '').orientation).toBe('landscape');
+    }
   });
   it('describes every property photograph and room-card crop concisely', () => {
     const sources = [...propertyGallery.filter(photo => !photo[0]?.includes('illustrative')).map(photo => photo[1]), ...rooms.map(room => room.image)];

@@ -1,4 +1,5 @@
 # Doss City website
+- [x] Correct gallery letterboxing with subject-aware framing, natural photo presentation, and checks at 360, 390, 430, tablet, and desktop widths.
 - [x] Fix portrait-photo overflow, consistent photo framing, and verify desktop/mobile presentation without altering content.
 - [x] Replace property placeholders with the owner's photos and faithful pub/conference variations; retain layout and blog inspiration imagery.
 - [x] Update sample room rates so none exceeds GH₵250, then verify photos and room inquiries.
