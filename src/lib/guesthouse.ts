@@ -2,6 +2,9 @@ import blogExterior from '@/assets/guesthouse.jpg';
 import blogConference from '@/assets/conference.jpg';
 import exteriorAsset from '@/assets/property-building.jpg.asset.json';
 import roomAsset from '@/assets/property-room-grey.jpg.asset.json';
+import greyCard from '@/assets/property-room-grey-card.jpg.asset.json';
+import patternedCard from '@/assets/property-room-patterned-card.jpg.asset.json';
+import redCard from '@/assets/property-room-red-card.jpg.asset.json';
 import patternedRoom from '@/assets/property-room-patterned.jpg.asset.json';
 import redRoom from '@/assets/property-room-red.jpg.asset.json';
 import stripedRoom from '@/assets/property-room-striped.jpg.asset.json';
@@ -11,8 +14,8 @@ import pool from '@/assets/property-pool.jpg.asset.json';
 import poolside from '@/assets/property-poolside.jpg.asset.json';
 import poolSocial from '@/assets/property-pool-social.jpg.asset.json';
 import poolWalkway from '@/assets/property-pool-walkway.jpg.asset.json';
-import restaurant from '@/assets/pub-enhanced.jpg';
-import conference from '@/assets/conference-enhanced.jpg';
+import restaurantAsset from '@/assets/property-pub-original.jpg.asset.json';
+import conferenceAsset from '@/assets/property-conference-original.jpg.asset.json';
 import pubDetail from '@/assets/property-pub-detail.jpg.asset.json';
 import pubCloseup from '@/assets/property-pub-closeup.jpg.asset.json';
 import conferenceDetail from '@/assets/property-conference-detail.jpg.asset.json';
@@ -20,12 +23,14 @@ import conferenceCloseup from '@/assets/property-conference-closeup.jpg.asset.js
 import countryside from '@/assets/countryside.jpg';
 import food from '@/assets/food.jpg';
 import { Wifi, CarFront, Waves, Snowflake, Accessibility, Presentation, Lightbulb, Utensils } from 'lucide-react';
+const restaurant = restaurantAsset.url;
+const conference = conferenceAsset.url;
 export const images = { exterior: exteriorAsset.url, room: roomAsset.url, restaurant, conference, countryside, food, pool: pool.url, pubDetail: pubDetail.url, conferenceDetail: conferenceDetail.url };
 export const blogImages = { exterior: blogExterior, conference: blogConference };
 export const propertyGallery: string[][] = [
  ['The guest house',images.exterior,'Exterior'],
  ['The courtyard',courtyard.url,'Exterior'],
- ['Guest-room corridor',hallway.url,'Exterior'],
+  ['Guest-room corridor',hallway.url,'Rooms'],
  ['A comfortable retreat',images.room,'Rooms'],
  ['Patterned bedding',patternedRoom.url,'Rooms'],
  ['Red-accented guest room',redRoom.url,'Rooms'],
@@ -52,7 +57,7 @@ export const amenities = [
  { icon: Accessibility, title: 'Accessible facilities', text: 'Contact us to discuss your accessibility needs.' },
  { icon: Lightbulb, title: 'Good lighting', text: 'Well-lit rooms and welcoming shared spaces.' },
 ];
-export const rooms = [ { name: 'Standard Room', price: 200, guests: '1–2 guests', description: 'Simple comforts for a restful stay.', image: roomAsset.url }, { name: 'Deluxe Room', price: 225, guests: '1–2 guests', description: 'A little more space to make yourself at home.', image: patternedRoom.url }, { name: 'Family Room', price: 250, guests: 'Family stays', description: 'Comfortable accommodation for time together.', image: redRoom.url } ];
+export const rooms = [ { name: 'Standard Room', price: 200, guests: '1–2 guests', description: 'Simple comforts for a restful stay.', image: greyCard.url }, { name: 'Deluxe Room', price: 225, guests: '1–2 guests', description: 'A little more space to make yourself at home.', image: patternedCard.url }, { name: 'Family Room', price: 250, guests: 'Family stays', description: 'Comfortable accommodation for time together.', image: redCard.url } ];
 export const navigation = [['Home','/'],['About','/about'],['Rooms','/rooms'],['Amenities','/amenities'],['Dining','/restaurant'],['Conference','/conference'],['Gallery','/gallery'],['Reviews','/reviews'],['News','/news'],['Contact','/contact']] as const;
 export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Doss+City+Guest+House+Dompoase+Ghana';
 export const bookingWidgetUrl: string = ''; // Set to the owner's HTTPS booking provider embed URL.
