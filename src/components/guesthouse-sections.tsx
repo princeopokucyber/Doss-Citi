@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, ArrowRight, Star, Check, Users, Phone, MapPin, ShieldCheck, HeartHandshake, Clock, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { amenities, rooms, images, mapUrl, areaPhotographs, areaHighlights } from '@/lib/guesthouse';
+import { amenities, rooms, images, mapUrl } from '@/lib/guesthouse';
 import type { ReactNode } from 'react';
 export function Eyebrow({children}: {children: ReactNode}) { return <div className="eyebrow">{children}</div>; }
 export function Stars() { return <span className="stars" aria-label="5 stars">{Array.from({length:5},(_,i)=><Star key={i}/>)}</span>; }
