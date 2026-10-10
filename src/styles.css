@@ -15,6 +15,7 @@
  --border: oklch(.91 .012 85); --input: var(--border); --ring: var(--accent);
  --hero-foreground: oklch(1 0 0); --hero-muted: oklch(.91 .015 240);
  --hero-overlay: linear-gradient(90deg, oklch(.2 .055 250 / .88), oklch(.2 .04 250 / .48) 55%, oklch(.2 .03 250 / .10));
+ --hero-carousel-overlay: oklch(.2 .04 250 / .64);
  --shadow-soft: 0 12px 40px oklch(.2 .04 250 / .08);
  --font-body: 'DM Sans', sans-serif; --font-heading: 'Cormorant Garamond', Georgia, serif;
 }
@@ -52,7 +53,7 @@
 .hero-slide .hero-photo { transform:scale(1); }
 .hero-slide.is-active .hero-photo { animation:hero-zoom 5s linear forwards; }
 @keyframes hero-zoom { from { transform:scale(1); } to { transform:scale(1.045); } }
-.hero-carousel::after { background:linear-gradient(var(--primary)/.5,var(--primary)/.5); background:var(--hero-overlay); }
+.hero-carousel::after { background:var(--hero-carousel-overlay); }
 .hero-carousel .hero-content { text-align:center; padding-top:48px; display:flex; flex-direction:column; align-items:center; }
 .hero-carousel .hero-content > .flex { justify-content:center; }
 .hero-carousel-controls { position:absolute; z-index:2; bottom:76px; left:0; right:0; display:flex; align-items:center; justify-content:center; gap:12px; }
