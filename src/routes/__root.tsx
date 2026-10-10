@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import { Header, Footer } from "@/components/guesthouse-layout";
 import { Button } from "@/components/ui/button";
+import logoAsset from '@/assets/logo.png.asset.json';
+import { photoUrl } from '@/lib/photo-url';
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -95,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: photoUrl(logoAsset) },
     ],
   }),
   shellComponent: RootShell,

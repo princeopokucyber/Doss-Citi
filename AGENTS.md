@@ -12,6 +12,7 @@
 ## Website architecture
 - Use TanStack file routes for every public content page, with shared hospitality layouts and sections in src/components; this keeps navigation and page metadata consistent.
 - Keep business content, sample room rates, image references, and the optional HTTPS booking widget URL in src/lib/guesthouse.ts so the template has one editable source.
+- Resolve photo asset pointers through the shared public HTTPS origin helper so exported sites do not request Lovable-only paths from their own host; retain pointers and original property provenance.
 - Keep owner-photo gallery data separate from blog inspiration images; this allows property photo replacements without changing the blog's imagery.
 - Keep homepage background-carousel behavior in a focused component and its photo references in the central guest-house data module; this isolates animation and controls from stationary page content.
 - Bound property photos with explicit aspect-ratio frames; gallery previews use equal-size grids and subject-aware cover crops, while section portraits and lightboxes use contain to retain full originals without overflow.
