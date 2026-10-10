@@ -1,6 +1,6 @@
 # Doss City website
-- [ ] Replace property placeholders with the owner's photos and faithful pub/conference variations; retain layout and blog inspiration imagery.
-- [ ] Update sample room rates so none exceeds GH₵250, then verify photos and room inquiries.
+- [x] Replace property placeholders with the owner's photos and faithful pub/conference variations; retain layout and blog inspiration imagery.
+- [x] Update sample room rates so none exceeds GH₵250, then verify photos and room inquiries.
 - [x] Build all requested pages and shared navigation, imagery, footer.
 - [x] Add booking requests, inquiry form, newsletter subscription.
 - [x] Verify desktop and mobile pages and forms.
