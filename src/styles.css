@@ -54,7 +54,7 @@
 .hero-slide.is-active .hero-photo { animation:hero-zoom 5s linear forwards; }
 @keyframes hero-zoom { from { transform:scale(1); } to { transform:scale(1.045); } }
 .hero-carousel::after { background:var(--hero-carousel-overlay); }
-.hero-carousel .hero-content { text-align:center; padding-top:48px; display:flex; flex-direction:column; align-items:center; }
+.hero-carousel .hero-content { text-align:center; padding-top:20px; display:flex; flex-direction:column; align-items:center; }
 .hero-carousel .hero-content > .flex { justify-content:center; }
 .hero-carousel-controls { position:absolute; z-index:2; bottom:76px; left:0; right:0; display:flex; align-items:center; justify-content:center; gap:12px; }
 .hero-carousel-arrow { border-radius:50%; background:var(--primary); }
