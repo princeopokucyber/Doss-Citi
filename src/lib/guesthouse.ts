@@ -1,3 +1,6 @@
+import kumasiPhoto from '@/assets/kumasi-manhyia-palace.jpg.asset.json';
+import marketPhoto from '@/assets/kumasi-kejetia-market.jpg.asset.json';
+import marketLicense from '@/assets/photo-license-gfdl-1.2.txt.asset.json';
 import exterior from '@/assets/guesthouse.jpg';
 import room from '@/assets/room.jpg';
 import restaurant from '@/assets/restaurant.jpg';
@@ -21,3 +24,14 @@ export const navigation = [['Home','/'],['About','/about'],['Rooms','/rooms'],['
 export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Doss+City+Guest+House+Dompoase+Ghana';
 export const bookingWidgetUrl: string = ''; // Set to the owner's HTTPS booking provider embed URL.
 export function pageHead(title: string, description: string) { return { meta: [{ title: `${title} | Doss City Guest House` },{ name:'description',content:description },{ property:'og:title',content:`${title} | Doss City Guest House` },{ property:'og:description',content:description },{ property:'og:type',content:'website' },{ name:'twitter:card',content:'summary_large_image' }] }; }
+
+export const areaPhotographs = [
+ {name:'Kumasi',landmark:'Manhyia Palace Museum',text:'Discover royal Ashanti heritage and the character of the city.',image:kumasiPhoto.url,alt:'Real photograph of Manhyia Palace Museum in Kumasi',author:'Caupolicaningles',source:'https://commons.wikimedia.org/wiki/File:Manhyia_Palace_Museum,_Kumasi,_Ghana.jpg',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',year:'2018'},
+ {name:'Local markets',landmark:'Kejetia Market, Kumasi',text:'Explore the colour and energy of Kumasi’s historic central market.',image:marketPhoto.url,alt:'Real archival photograph of the busy central market in Kumasi',author:'Torsten Müller',source:'https://rachel.core2learn.org/modules/en-wikipedia_for_schools-static/images/717/71746.jpg.htm',license:'GFDL 1.2+',licenseUrl:marketLicense.url,year:'2004'},
+];
+export const areaHighlights = [
+ {name:'Fomena',text:'Discover the district capital and its local character.'},
+ {name:'Obuasi',text:'Explore a town known for its gold-mining heritage.'},
+ {name:'Adansi countryside',text:'Enjoy green landscapes and a slower pace.'},
+ {name:'Dompoase community',text:'Get a feel for local life around your home away from home.'},
+];
