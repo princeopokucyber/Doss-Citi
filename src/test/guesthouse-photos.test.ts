@@ -14,8 +14,13 @@ describe('Guest-house photo and price update', () => {
     }
     expect(blogImages.exterior).not.toBe(images.exterior);
     expect(blogImages.conference).not.toBe(images.conference);
-    expect(propertyGallery.filter(photo => photo[2] === 'Rooms')).toHaveLength(4);
+    expect(propertyGallery.filter(photo => photo[2] === 'Rooms')).toHaveLength(5);
     expect(propertyGallery.filter(photo => photo[2] === 'Conference')).toHaveLength(3);
     expect(propertyGallery.filter(photo => photo[2] === 'Dining' && !photo[0]?.includes('illustrative'))).toHaveLength(3);
+  });
+  it('categorizes interior photographs correctly and retains original pub and meeting photos', () => {
+    expect(propertyGallery.find(photo => photo[0] === 'Guest-room corridor')?.[2]).toBe('Rooms');
+    expect(images.restaurant).toContain('/__l5e/assets-v1/');
+    expect(images.conference).toContain('/__l5e/assets-v1/');
   });
 });

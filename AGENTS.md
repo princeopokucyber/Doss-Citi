@@ -13,6 +13,7 @@
 - Use TanStack file routes for every public content page, with shared hospitality layouts and sections in src/components; this keeps navigation and page metadata consistent.
 - Keep business content, sample room rates, image references, and the optional HTTPS booking widget URL in src/lib/guesthouse.ts so the template has one editable source.
 - Keep owner-photo gallery data separate from blog inspiration images; this allows property photo replacements without changing the blog's imagery.
+- Bound property photos with explicit aspect-ratio frames and use contain for gallery previews, section portraits, and lightboxes, with faithful crops for room cards; this prevents natural image dimensions from expanding cards or overflowing the viewport while preserving subjects.
 - Public contact and newsletter forms insert through the generated Cloud client with insert-only RLS policies and database constraints; visitor data must never be publicly readable.
 - Booking requests are inquiries, not confirmed reservations; only show a third-party booking iframe when the owner's genuine provider embed URL is configured.
 - Downloaded location photographs use CDN asset pointers and retain source, author, date, and license credits alongside the image data; this preserves provenance and reuse obligations.
