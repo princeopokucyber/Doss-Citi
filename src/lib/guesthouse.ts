@@ -27,6 +27,31 @@ const restaurant = restaurantAsset.url;
 const conference = conferenceAsset.url;
 export const images = { exterior: exteriorAsset.url, room: roomAsset.url, restaurant, conference, countryside, food, pool: pool.url, pubDetail: pubDetail.url, conferenceDetail: conferenceDetail.url };
 export const blogImages = { exterior: blogExterior, conference: blogConference };
+export const propertyPhotoAlt: Record<string, string> = {
+  [images.exterior]: 'Doss City Guest House building with a paved courtyard and blue canopy.',
+  [courtyard.url]: 'Courtyard beside an orange building, with pool rules and a blue canopy.',
+  [hallway.url]: 'Guest-room corridor with illuminated ceiling and tiled floor.',
+  [images.room]: 'Guest room with grey bedding, a wooden bed and a bedside table.',
+  [greyCard.url]: 'Wooden bed with grey bedding and patterned pillows.',
+  [patternedRoom.url]: 'Guest room with floral bedding, a wooden headboard and a ceiling fan.',
+  [patternedCard.url]: 'Bed with floral bedding and a curved wooden headboard.',
+  [redRoom.url]: 'Guest room with red curtains, a wooden bed and red-and-white bedding.',
+  [redCard.url]: 'Wooden bed with red-and-white bedding beside red curtains.',
+  [stripedRoom.url]: 'Guest room with striped bedding, a wooden headboard and air conditioner.',
+  [pool.url]: 'Blue swimming pool bordered by tiled decking and guest-house buildings.',
+  [poolside.url]: 'Guests sitting at the pool edge beside a stone wall.',
+  [poolSocial.url]: 'Guests in the swimming pool beside the guest-house building.',
+  [poolWalkway.url]: 'Tiled poolside walkway with metal railings and a blue canopy.',
+  [restaurant]: 'Pub interior with a counter, bottle shelves and wall displays.',
+  [pubDetail.url]: 'Pub counter with bottle shelves and framed wall displays.',
+  [pubCloseup.url]: 'Close-up of the pub bottle shelves and wall displays.',
+  [conference]: 'Conference space with woven armchairs, tables and large windows.',
+  [conferenceDetail.url]: 'Woven armchairs and tables in the window-lit conference space.',
+  [conferenceCloseup.url]: 'Close-up of woven seating and tables in the conference space.',
+};
+export function photoAlt(src: string, fallback: string) {
+  return propertyPhotoAlt[src] ?? fallback;
+}
 export const propertyGallery: string[][] = [
  ['The guest house',images.exterior,'Exterior'],
  ['The courtyard',courtyard.url,'Exterior'],
