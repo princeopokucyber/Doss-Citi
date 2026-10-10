@@ -1,0 +1,10 @@
+CREATE TABLE public.guest_inquiries (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), name text NOT NULL CHECK (char_length(name) BETWEEN 1 AND 100), email text NOT NULL CHECK (char_length(email) BETWEEN 3 AND 255), phone text NOT NULL DEFAULT '' CHECK (char_length(phone) <= 30), arrival date, departure date, guests integer NOT NULL DEFAULT 1 CHECK (guests BETWEEN 1 AND 100), room text NOT NULL DEFAULT 'Any room' CHECK (char_length(room) <= 100), message text NOT NULL CHECK (char_length(message) BETWEEN 1 AND 2000), created_at timestamptz NOT NULL DEFAULT now());
+GRANT INSERT ON public.guest_inquiries TO anon, authenticated;
+GRANT ALL ON public.guest_inquiries TO service_role;
+ALTER TABLE public.guest_inquiries ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Visitors submit inquiries" ON public.guest_inquiries FOR INSERT TO anon, authenticated WITH CHECK (char_length(name) BETWEEN 1 AND 100 AND char_length(message) BETWEEN 1 AND 2000 AND email ~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$');
+CREATE TABLE public.newsletter_subscribers (id uuid PRIMARY KEY DEFAULT gen_random_uuid(), email text NOT NULL UNIQUE CHECK (char_length(email) BETWEEN 3 AND 255), consent boolean NOT NULL DEFAULT true CHECK (consent = true), created_at timestamptz NOT NULL DEFAULT now());
+GRANT INSERT ON public.newsletter_subscribers TO anon, authenticated;
+GRANT ALL ON public.newsletter_subscribers TO service_role;
+ALTER TABLE public.newsletter_subscribers ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Visitors subscribe with consent" ON public.newsletter_subscribers FOR INSERT TO anon, authenticated WITH CHECK (consent = true AND email ~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$');
