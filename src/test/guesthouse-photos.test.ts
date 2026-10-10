@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { images, rooms, propertyGallery, blogImages } from '@/lib/guesthouse';
+import { images, rooms, propertyGallery, blogImages, propertyPhotoAlt, photoAlt } from '@/lib/guesthouse';
 
 describe('Guest-house photo and price update', () => {
   it('retains the existing room choices and keeps sample rates at or below the cap', () => {
@@ -22,5 +22,16 @@ describe('Guest-house photo and price update', () => {
     expect(propertyGallery.find(photo => photo[0] === 'Guest-room corridor')?.[2]).toBe('Rooms');
     expect(images.restaurant).toContain('/__l5e/assets-v1/');
     expect(images.conference).toContain('/__l5e/assets-v1/');
+  });
+  it('describes every property photograph and room-card crop concisely', () => {
+    const sources = [...propertyGallery.filter(photo => !photo[0]?.includes('illustrative')).map(photo => photo[1]), ...rooms.map(room => room.image)];
+    for (const src of sources) {
+      expect(src).toBeTruthy();
+      const description = propertyPhotoAlt[src ?? ''];
+      expect(description?.length).toBeGreaterThan(15);
+      expect(description?.length).toBeLessThan(125);
+      expect(photoAlt(src ?? '', 'Fallback')).toBe(description);
+    }
+    expect(photoAlt('unknown-photo', 'Illustrative image')).toBe('Illustrative image');
   });
 });
