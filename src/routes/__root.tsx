@@ -80,10 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Doss City Guest House" },
+      { title: "Doss Citi Guest House" },
       { name: "description", content: "Comfortable accommodation and warm hospitality in Dompoase, Ashanti, Ghana." },
       
-      { property: "og:title", content: "Doss City Guest House" },
+      { property: "og:title", content: "Doss Citi Guest House" },
       { property: "og:description", content: "Comfortable accommodation and warm hospitality in Dompoase, Ashanti, Ghana." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

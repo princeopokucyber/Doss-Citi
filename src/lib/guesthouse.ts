@@ -30,12 +30,12 @@ const conference = conferenceAsset.url;
 export const images = { exterior: exteriorAsset.url, room: roomAsset.url, restaurant, conference, countryside, food, pool: pool.url, pubDetail: pubDetail.url, conferenceDetail: conferenceDetail.url };
 export const blogImages = { exterior: blogExterior, conference: blogConference };
 export const heroSlides = [
-  { src: images.exterior, alt: 'Doss City Guest House building with a paved courtyard and blue canopy.' },
+  { src: images.exterior, alt: 'Doss Citi Guest House building with a paved courtyard and blue canopy.' },
   { src: heroPool.url, alt: 'Blue swimming pool between stone-clad guest-house buildings.' },
   { src: heroPoolGuests.url, alt: 'Guests swimming and relaxing beside the guest-house pool.' },
 ];
 export const propertyPhotoAlt: Record<string, string> = {
-  [images.exterior]: 'Doss City Guest House building with a paved courtyard and blue canopy.',
+  [images.exterior]: 'Doss Citi Guest House building with a paved courtyard and blue canopy.',
   [courtyard.url]: 'Courtyard beside an orange building, with pool rules and a blue canopy.',
   [hallway.url]: 'Guest-room corridor with illuminated ceiling and tiled floor.',
   [images.room]: 'Guest room with grey bedding, a wooden bed and a bedside table.',
@@ -102,4 +102,4 @@ export const rooms = [ { name: 'Standard Room', price: 200, guests: '1–2 guest
 export const navigation = [['Home','/'],['About','/about'],['Rooms','/rooms'],['Amenities','/amenities'],['Dining','/restaurant'],['Conference','/conference'],['Gallery','/gallery'],['Reviews','/reviews'],['News','/news'],['Contact','/contact']] as const;
 export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Doss+City+Guest+House+Dompoase+Ghana';
 export const bookingWidgetUrl: string = ''; // Set to the owner's HTTPS booking provider embed URL.
-export function pageHead(title: string, description: string) { return { meta: [{ title: `${title} | Doss City Guest House` },{ name:'description',content:description },{ property:'og:title',content:`${title} | Doss City Guest House` },{ property:'og:description',content:description },{ property:'og:type',content:'website' },{ name:'twitter:card',content:'summary_large_image' }] }; }
+export function pageHead(title: string, description: string) { return { meta: [{ title: `${title} | Doss Citi Guest House` },{ name:'description',content:description },{ property:'og:title',content:`${title} | Doss Citi Guest House` },{ property:'og:description',content:description },{ property:'og:type',content:'website' },{ name:'twitter:card',content:'summary_large_image' }] }; }
